@@ -1,0 +1,127 @@
+
+
+.macbook-air {
+    background-color: #021945;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .macbook-air .div {
+    border: 2px dotted rgb(223, 217, 156);
+    background-color: #021945;
+    width: 100%;
+    height: 832px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+  }
+  
+  .macbook-air .logo {
+    border: 2px dotted rgb(223, 217, 156);
+    margin: 0 auto;
+    position: absolute;
+    width: 150px;
+    height: 70px;
+    top: 252px;
+  }
+  
+  .macbook-air .search-box {
+    position: relative;
+    width: 590px;
+    height: 49px;
+    top: 390px;
+    display: flex;
+    align-items: center;
+  }
+
+  .macbook-air .search-box input[type="url"] {
+    outline: none;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    margin-left: 70px;
+    width: 480px;
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+    z-index: 2
+  }
+
+  .macbook-air .search-box input[type="url"]:focus {
+    outline : none;
+    border: none;
+    padding-left: 10px;
+    font-size: 20px;
+    color: #486190;
+    z-index: 1
+  }
+
+  .macbook-air .search-box .search-img {
+    border: 2px dotted rgb(223, 217, 156);
+    position: absolute;
+    margin: 0;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: #fff !important;
+  }
+  
+  .macbook-air .text-wrapper-2 {
+    border: 2px dotted rgb(223, 217, 156);
+    position: absolute;
+    width: 339px;
+    height: 21px;
+    top: 508px;
+    font-family: "Inter-Italic", Helvetica;
+    font-weight: 400;
+    font-style: italic;
+    color: #00308e;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    text-decoration: underline;
+    white-space: nowrap;
+    &:hover {
+      user-select: none;
+    }
+    &:hover + .info-hover {
+      opacity: 0.8;
+    }
+  }
+
+  .macbook-air .info-hover {
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    position: absolute;
+    margin-right: 600px;
+    margin-top: 495px;
+    opacity: 0;
+    transition: all ease 0.5s;
+    user-select: none;
+  }
+  
+footer {
+    border: 2px dotted rgb(223, 217, 156);
+    position: relative;
+    width: 100%;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #2b4e8f;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
+}
