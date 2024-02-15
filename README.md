@@ -4,6 +4,6 @@
 
 ## Material (you can see the PPT on KEEPER website)
 1. [Proposal](https://keeper.or.kr/board/view/172759)
-2. [Interim](not uploaded)
+2. [Interim](https://keeper.or.kr/board/view/172773)
 3. [Final](not uploaded)
 <p align="right">ꉂ😃ᵎᵎᵎ</p>
