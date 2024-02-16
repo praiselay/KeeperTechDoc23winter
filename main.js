@@ -12,10 +12,12 @@ function isValidURL(URL) {
 
 function SendURL(e) {
   if (e.keyCode == 13) {
-    var URL = document.getElementById("urlInput");
-    console.log(URL.toString);
+    console.log("entered")
+    var URL = document.getElementById('urlInput').value;
+    console.log(URL);
     //유효한 url 검증
     if (isValidURL(URL)) {
+      alert("This is the valid URL.");
       //자바스크립트의 입력값을 파이썬 코드의 인자로 전달 후 실행
       const spawn = require("child_process").spawn;
       const result = spawn("python", ["crawling.py"], URL);
