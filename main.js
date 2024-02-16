@@ -10,6 +10,7 @@ function isValidURL(URL) {
   }
 }
 
+
 function SendURL(e) {
   if (e.keyCode == 13) {
     console.log("entered")
@@ -19,10 +20,12 @@ function SendURL(e) {
     if (isValidURL(URL)) {
       alert("This is the valid URL.");
       //자바스크립트의 입력값을 파이썬 코드의 인자로 전달 후 실행
-      const spawn = require("child_process").spawn;
-      const result = spawn("python", ["crawling.py"], URL);
-      console.log(result.toString());
-    } else if (URL.value.length == 0) {
+      const spawn = require('child_process').spawn;
+      const result = spawn("python", ["./crawling.py"], URL);
+      result.stdout.on('data', function(data) {
+        console.log(data.toString());
+      })
+    } else if (URL.length == 0) {
       alert("Type the URL.");
       return false;
     } else {
