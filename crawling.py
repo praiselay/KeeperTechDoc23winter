@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas
 
-resp = requests.get('https://finance.naver.com/')
+resp = requests.get('<URL>')
 html = resp.text
 soup = BeautifulSoup(html, 'html.parser')
 # news = soup.select('.<class tag>')
