@@ -13,7 +13,7 @@ function isValidURL(URL) {
 function SendURL(e) {
   if (e.keyCode == 13) {
     var URL = document.getElementById("urlInput");
-
+    console.log(URL.toString);
     //유효한 url 검증
     if (isValidURL(URL)) {
       //자바스크립트의 입력값을 파이썬 코드의 인자로 전달 후 실행
@@ -21,10 +21,10 @@ function SendURL(e) {
       const result = spawn("python", ["crawling.py"], URL);
       console.log(result.toString());
     } else if (URL.value.length == 0) {
-      alert("Type the URL");
+      alert("Type the URL.");
       return false;
     } else {
-      alert("Check the URL.");
+      alert("Type the valid URL.");
       return false;
     }
     //파이썬 코드 실행하는 함수
