@@ -8,6 +8,8 @@
 
 #Applications should not create session cookies fro untrusted input
 
+#OS commands should not be vulnerable to command injection attacks
+
 
 #악성 파일 검증
 
