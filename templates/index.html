@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>VulDetec</title>
+  <!-- 이미지 경로를 수정하여 templates 폴더에서 가져오도록 설정 -->
+  <link rel="icon" href="/static/img/logo.png">
+  <!-- CSS 파일의 경로를 수정하여 정적 파일로 서빙되도록 설정 -->
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="main.js"></script>
+</head>
+<body style="background-color: #021945">
+<div class="screen">
+  <div class="div">
+      <!-- 이미지 경로 수정 -->
+      <img class="logo" src="/static/img/logo.png" />
+      <div class="search-box">
+          <!-- Enter 키를 누르면 handleKeyPress 함수 호출 -->
+          <input type="url" id="urlInput" placeholder="Type the URL" onfocus="this.placeholder=''" onblur="this.placeholder='Type the URL'" autofocus onkeypress="handleKeyPress(event)">
+          <!-- 이미지 경로 수정 -->
+          <img class="search-img" src="/static/img/search-rec.png">
+      </div>
+      <a href="info.html" class="text-wrapper-2">INFO for vulnerabilities detection</a>
+      <div class="info-hover">
+          <b>Types of Detection</b><br><br>1. first<br>2. second<br>3. third
+      </div>
+  </div>
+</div>
+
+<!-- 결과를 표시할 요소 추가 -->
+<div id="resultDiv"></div>
+
+</body>
+<footer>
+<p class="p">COPYRIGHT Ⓒ HONG JIYEON | JANBUBU | KANG TAEJIN</p>
+</footer>
+<script>
+  // Enter 키를 눌렀을 때 실행되는 함수
+  function handleKeyPress(event) {
+    if (event.keyCode === 13) { // Enter 키의 키코드는 13입니다.
+      sendURL(); // sendURL() 함수 호출
+    }
+  }
+
+  function sendURL() {
+    var url = document.getElementById('urlInput').value;
+    fetch('/process_url', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({url: url}),
+    })
+    .then(response => response.text())
+    .then(data => {
+        // 결과를 받아와서 HTML 요소에 표시
+        document.getElementById('resultDiv').innerHTML = '<p>' + data + '</p>';
+    })
+    .catch(error => console.error('Error:', error));
+  }
+</script>
+</html>
