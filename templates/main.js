@@ -1,8 +1,8 @@
 // URL 입력 후, 엔터키 입력 시 파이썬 코드 작동
 // 입력 값이 없을 경우, 안내문 필요
 function isValidURL(URL) {
-  // var RegExp =
-  //   /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+  var RegExp =
+    /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
   if (RegExp.test(URL)) {
     return true;
   } else {

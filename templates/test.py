@@ -10,4 +10,4 @@ def crawl(url):
   # news = soup.select('.<class tag>')
   print(soup)
 
-crawl("")
+crawl("https://keeper.or.kr/")

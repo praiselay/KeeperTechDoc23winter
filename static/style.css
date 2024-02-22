@@ -123,3 +123,14 @@ footer {
   transform: translateX(-50%);
   bottom: 10%;
 }
+
+#resultDiv {
+  font-family: "Inter-Regular", Helvetica;
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+}
+
