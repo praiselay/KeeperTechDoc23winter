@@ -28,17 +28,21 @@ def process_url():
         # XSS 가능성 검사
         for tag in can_xss:
             if tag in html_code:
-                results = []
                 results.append(f"Can perform XSS attack using '{tag}' tag")
         # SQL Injection 가능성 검사
         for tag in can_sql_injection:
             if tag in html_code:
-                results = []
                 results.append(f"Can perform SQL injection attack using '{tag}' tag")
         
         # 결과 반환
         if not results:
-            return "No XSS or SQL injection vulnerabilities found"
+            return flask.jsonify("No XSS or SQL injection vulnerabilities found")
+        else:
+            result_string = ", ".join(results)
+            result_string = result_string.replace("[", "").replace("]", "").replace('"', "")
+            return flask.jsonify(result_string)
+
+
     else:
         # 요청 실패 시 에러 메시지 반환
         return f'Error: {response.status_code}'
