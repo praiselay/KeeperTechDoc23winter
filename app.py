@@ -55,7 +55,7 @@ def detect_ssl_weakness():
     try:
         context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
         context.minimum_version = ssl.TLSVersion.TLSv1_3
-        # print("SSL/TLS ver.: ", context.minimum_version)
+        print("SSL/TLS Protocol Version:", ssl.OPENSSL_VERSION)
         return False 
     except ssl.SSLError:
         return True
