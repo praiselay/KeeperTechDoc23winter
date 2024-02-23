@@ -1,15 +1,15 @@
 import flask
 import requests
-import re
 import os
-import subprocess
 import tempfile
 import ssl
 from requests_oauthlib.oauth2_session import OAuth2Session
-from os import environ #SECRET KEY 취약점 관련 코딩 시 필요
 from flask import Flask
 from flask import render_template
 from flask import redirect
+# import re
+# from os import environ #SECRET KEY 취약점 관련 코딩 시 필요
+# import subprocess
 
 app = Flask(__name__)
 
@@ -55,7 +55,7 @@ def detect_ssl_weakness():
     try:
         context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
         context.minimum_version = ssl.TLSVersion.TLSv1_3
-        print("SSL/TLS ver.: ", context.minimum_version)
+        # print("SSL/TLS ver.: ", context.minimum_version)
         return False 
     except ssl.SSLError:
         return True
@@ -103,16 +103,16 @@ def process_url():
         # 요청 실패 시 에러 메시지 반환
         return f'error: {response.status_code}'
 
-def safe_ping():
-    host = requests.args.get("host", "www.google.com")
-    status = subprocess.run(["ping", "-c", "1", "--", host]).returncode
-    return str(status == 0)
+# def safe_ping():
+#     host = requests.args.get("host", "www.google.com")
+#     status = subprocess.run(["ping", "-c", "1", "--", host]).returncode
+#     return str(status == 0)
 
-def check_cookie(request):
-    response = render_template(request, "index.html")
-    if not "sessionid" in request.COOKIE:
-        return redirect("/getcookie")
-    return response
+# def check_cookie(request):
+#     response = render_template(request, "index.html")
+#     if not "sessionid" in request.COOKIE:
+#         return redirect("/getcookie")
+#     return response
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080)
