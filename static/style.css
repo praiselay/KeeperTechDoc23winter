@@ -108,6 +108,19 @@ input:-webkit-autofill:active {
   user-select: none;
 }
 
+#resultDiv {
+  /* border: 2px solid yellow; */
+  font-family: "Inter-Regular", Helvetica;
+  position: fixed;
+  /* position: absolute;
+  flex-direction: column; */
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+}
+
 footer {
   /* border: 2px dotted rgb(223, 217, 156); */
   position: relative;
@@ -123,14 +136,3 @@ footer {
   transform: translateX(-50%);
   bottom: 10%;
 }
-
-#resultDiv {
-  font-family: "Inter-Regular", Helvetica;
-  position: fixed;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 20px;
-}
-
