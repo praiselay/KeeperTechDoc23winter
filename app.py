@@ -26,11 +26,11 @@ def detect_xss(html_code):
 
 def detect_sql_injection(html_code):
     can_sql_injection = ["method", "login", "post"]
-    # sql_injection_patterns = ["SELECT", "UPDATE", "DELETE", "INSERT", "EXEC"]
     for pattern in can_sql_injection:
         if pattern in html_code:
             return True
     return False
+# sql_injection_patterns = ["SELECT", "UPDATE", "DELETE", "INSERT", "EXEC"]
 
 def detect_command_injection(command):
     if any([keyword in command for keyword in [";", "&&", "|", "`", "$", "(", ")", "{", "}", "[", "]", "<", ">", "eval"]]):
@@ -55,7 +55,6 @@ def detect_ssl_weakness():
     try:
         context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
         context.minimum_version = ssl.TLSVersion.TLSv1_3
-        print("SSL/TLS Protocol Version:", ssl.OPENSSL_VERSION)
         return False 
     except ssl.SSLError:
         return True

@@ -109,12 +109,13 @@ input:-webkit-autofill:active {
 }
 
 #resultDiv {
-  /* border: 2px solid yellow; */
+  border: 1px solid white;
+  padding: 30px 30px;
   font-family: "Inter-Regular", Helvetica;
   position: fixed;
   /* position: absolute;
   flex-direction: column; */
-  top: 80%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
