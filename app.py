@@ -3,6 +3,7 @@ import requests
 import os
 import tempfile
 import ssl
+from flask import Flask
 # import re
 # from os import environ #SECRET KEY 취약점 관련 코딩 시 필요
 # from requests_oauthlib.oauth2_session import OAuth2Session
