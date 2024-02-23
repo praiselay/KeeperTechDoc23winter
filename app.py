@@ -83,7 +83,7 @@ def process_url():
             if ssl_weakness_detected:
                 results.append("Weak SSL/TLS protocol detected")
             
-            result_string = ", ".join(results)
+            result_string = "\n".join(results)
             return flask.jsonify(result_string)
     else:
         # 요청 실패 시 에러 메시지 반환
